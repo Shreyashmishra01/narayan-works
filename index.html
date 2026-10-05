@@ -1,225 +1,529 @@
-Akhil Mishra:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Narayan Works | Programming & Digital Solutions</title>
+<title>Narayan Works | Website Development</title>
 
 <style>
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-background: #0b1020;
-color: white;
+    background: #0b1020;
+    color: white;
 }
 
+/* NAVBAR */
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px 8%;
-background: #080c18;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(8,12,24,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1c2942;
 }
 
 .logo {
-font-size: 25px;
-font-weight: bold;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .logo span {
-color: #00c8ff;
+    color: #00c8ff;
 }
 
 nav a {
-color: white;
-text-decoration: none;
-margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
 }
 
+nav a:hover {
+    color: #00c8ff;
+}
+
+/* HERO */
 .hero {
-min-height: 85vh;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 40px 20px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background:
+        radial-gradient(circle at center, #13284a 0%, #0b1020 55%);
 }
 
 .hero h1 {
-font-size: 55px;
-margin-bottom: 20px;
+    font-size: 55px;
+    margin-bottom: 20px;
 }
 
 .hero h1 span {
-color: #00c8ff;
+    color: #00c8ff;
 }
 
 .hero p {
-font-size: 20px;
-color: #b8c0d0;
-max-width: 650px;
-margin: auto;
-line-height: 1.6;
+    font-size: 20px;
+    color: #b8c0d0;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
 }
 
 .btn {
-display: inline-block;
-margin-top: 30px;
-padding: 14px 28px;
-background: #00c8ff;
-color: #07101d;
-text-decoration: none;
-border-radius: 8px;
-font-weight: bold;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #00c8ff;
+    color: #07101d;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,200,255,0.3);
+}
+
+/* SERVICES */
 .services {
-padding: 70px 8%;
-text-align: center;
+    padding: 80px 8%;
+    text-align: center;
 }
 
-.services h2 {
-font-size: 35px;
-margin-bottom: 40px;
+.services h2,
+.products h2,
+.contact h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    color: #9da8bb;
+    margin-bottom: 40px;
 }
 
 .cards {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .card {
-background: #121a2d;
-padding: 35px 25px;
-border-radius: 12px;
+    background: #121a2d;
+    padding: 35px 25px;
+    border-radius: 15px;
+    border: 1px solid #202d48;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00c8ff;
 }
 
 .card h3 {
-color: #00c8ff;
-margin-bottom: 15px;
+    color: #00c8ff;
+    margin-bottom: 15px;
 }
 
 .card p {
-color: #b8c0d0;
-line-height: 1.6;
+    color: #b8c0d0;
+    line-height: 1.6;
 }
 
+/* PRODUCTS */
+.products {
+    padding: 80px 8%;
+    text-align: center;
+    background: #080c18;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: #121a2d;
+    padding: 30px 25px;
+    border-radius: 15px;
+    border: 1px solid #202d48;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    border-color: #00c8ff;
+}
+
+.product h3 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.product p {
+    color: #aeb8c9;
+    line-height: 1.6;
+    min-height: 75px;
+}
+
+.price {
+    color: #00c8ff;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* CONTACT */
 .contact {
-text-align: center;
-padding: 80px 20px;
-background: #080c18;
+    text-align: center;
+    padding: 90px 20px;
 }
 
-.contact h2 {
-font-size: 35px;
-margin-bottom: 15px;
+.contact p {
+    color: #b8c0d0;
+    margin-bottom: 15px;
 }
 
+.contact-info {
+    margin-top: 25px;
+    line-height: 2;
+    color: #b8c0d0;
+}
+
+.contact-info a {
+    color: #00c8ff;
+    text-decoration: none;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    background: #25D366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 27px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
 footer {
-text-align: center;
-padding: 20px;
-color: #8d96a8;
+    text-align: center;
+    padding: 25px;
+    color: #8d96a8;
+    background: #080c18;
+    border-top: 1px solid #1c2942;
 }
 
-@media (max-width: 768px) {
-.hero h1 {
-font-size: 38px;
-}
+/* MOBILE */
+@media (max-width: 768px) {
 
-.cards {
-grid-template-columns: 1fr;
-}
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-nav {
-flex-direction: column;
-gap: 15px;
-}
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .cards,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-<div class="logo">Narayan <span>Works</span></div>
 
-<div>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
+    <div class="logo">
+        Narayan <span>Works</span>
+    </div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Packages</a>
+        <a href="#contact">Contact</a>
+    </div>
+
 </nav>
 
+
+<!-- HERO -->
 <section class="hero" id="home">
-<div>
-<h1>Welcome to <span>Narayan Works</span></h1>
 
-<p>
-We build modern websites, programming solutions
-and digital experiences for individuals and businesses.
-</p>
+    <div>
 
-<a href="#services" class="btn">Explore Services</a>
-</div>
+        <h1>
+            Welcome to <span>Narayan Works</span>
+        </h1>
+
+        <p>
+            We create modern, responsive and professional
+            websites for businesses, creators and individuals.
+        </p>
+
+        <a href="#products" class="btn">
+            View Website Packages
+        </a>
+
+    </div>
+
 </section>
 
+
+<!-- SERVICES -->
 <section class="services" id="services">
 
-<h2>Our Services</h2>
+    <h2>Our Services</h2>
 
-<div class="cards">
+    <p class="section-text">
+        Complete digital solutions for your online presence.
+    </p>
 
-<div class="card">
-<h3>Web Development</h3>
-<p>
-Modern, responsive and professional websites
-for businesses and personal projects.
-</p>
-</div>
+    <div class="cards">
 
-Akhil Mishra:
-<div class="card">
-<h3>Programming</h3>
-<p>
-Python, JavaScript and other programming solutions
-for your projects.
-</p>
-</div>
+        <div class="card">
 
-<div class="card">
-<h3>Digital Solutions</h3>
-<p>
-Custom digital solutions designed to help
-businesses grow online.
-</p>
-</div>
+            <h3>🌐 Web Development</h3>
 
-</div>
+            <p>
+                Modern and responsive websites designed
+                for businesses and personal brands.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>💻 Programming</h3>
+
+            <p>
+                Programming and coding solutions for
+                your projects and requirements.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🚀 Digital Solutions</h3>
+
+            <p>
+                Customized digital solutions to help
+                your business grow online.
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+<!-- WEBSITE PACKAGES -->
+<section class="products" id="products">
+
+    <h2>Website Packages</h2>
+
+    <p class="section-text">
+        Choose the website package that fits your needs.
+    </p>
+
+
+    <div class="product-grid">
+
+
+        <!-- BASIC WEBSITE -->
+        <div class="product">
+
+            <h3>Basic Website</h3>
+
+            <p>
+                A simple and clean website for individuals,
+                small businesses and personal projects.
+            </p>
+
+            <div class="price">
+                ₹1,500
+            </div>
+
+            <a
+                href="https://wa.me/919151426365?text=Hello%20Narayan%20Works,%20I%20am%20interested%20in%20the%20Basic%20Website%20package%20for%20%E2%82%B91500."
+                class="btn"
+                target="_blank"
+            >
+                Buy Now
+            </a>
+
+        </div>
+
+
+        <!-- HIGH WEBSITE -->
+        <div class="product">
+
+            <h3>High Website</h3>
+
+            <p>
+                A modern business website with a professional
+                design and more advanced sections.
+            </p>
+
+            <div class="price">
+                ₹3,000
+            </div>
+
+            <a
+                href="https://wa.me/919151426365?text=Hello%20Narayan%20Works,%20I%20am%20interested%20in%20the%20High%20Website%20package%20for%20%E2%82%B93000."
+                class="btn"
+                target="_blank"
+            >
+                Buy Now
+            </a>
+
+        </div>
+
+
+        <!-- PROFESSIONAL WEBSITE -->
+        <div class="product">
+
+            <h3>Professional Website</h3>
+
+            <p>
+                A premium professional website with advanced
+                design, features and business-focused layout.
+            </p>
+
+            <div class="price">
+                ₹5,500
+            </div>
+
+            <a
+                href="https://wa.me/919151426365?text=Hello%20Narayan%20Works,%20I%20am%20interested%20in%20the%20Professional%20Website%20package%20for%20%E2%82%B95500."
+                class="btn"
+                target="_blank"
+            >
+                Buy Now
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
 <section class="contact" id="contact">
 
-<h2>Let's Build Something Great</h2>
+    <h2>Let's Build Something Great</h2>
 
-<p>Have a project in mind? Get in touch with Narayan Works.</p>
+    <p>
+        Have a project in mind? Contact Narayan Works today.
+    </p>
 
-<a href="mailto:contact@narayanworks.com" class="btn">
-Contact Us
-</a>
+    <div class="contact-info">
+
+        📞
+        <a href="tel:+919151426365">
+            +91 9151426365
+        </a>
+
+        <br>
+
+        📧
+        <a href="mailto:shreyashm035@gmail.com">
+            shreyashm035@gmail.com
+        </a>
+
+        <br>
+
+        💬
+        <a
+            href="https://wa.me/919151426365"
+            target="_blank"
+        >
+            Chat on WhatsApp
+        </a>
+
+    </div>
+
+    <a
+        href="mailto:shreyashm035@gmail.com"
+        class="btn"
+    >
+        📧 Contact Us
+    </a>
 
 </section>
 
+
+<!-- FLOATING WHATSAPP -->
+<a
+    href="https://wa.me/919151426365?text=Hello%20Narayan%20Works"
+    class="whatsapp"
+    target="_blank"
+    title="Chat on WhatsApp"
+>
+    💬
+</a>
+
+
+<!-- FOOTER -->
 <footer>
-© 2026 Narayan Works. All Rights Reserved.
+
+    © 2026 Narayan Works. All Rights Reserved.
+
 </footer>
+
 
 </body>
 </html>
+```
